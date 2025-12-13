@@ -50,6 +50,32 @@ func main() {
 		}
 		grandTotal += bigNum
 	}
+
+	// Part Two (Greedy Stack Algorithm)
+	totalResult := 0
+
+	for _, value := range fileArray {
+		stack := []rune{}
+		toRemove := len(value) - 12
+
+		// Process each digit
+		for _, digit := range value {
+			// While we can remove & stack has elements & top is smaller than current
+			for toRemove > 0 && len(stack) > 0 && stack[len(stack) - 1] < digit {
+				stack = stack[:len(stack) - 1] // Pop from stack
+				toRemove--
+			}
+
+			stack = append(stack, digit)
+		}
+
+		// Take first 12 digits (should be exactly 12 after removals)
+		result := string(stack[:12])
+		resultNum, _ := strconv.Atoi(result)
+
+		totalResult += resultNum
+	}
 		
 	fmt.Println("Answer (Part One):", color.GreenString(strconv.Itoa(grandTotal)))
+	fmt.Println("Answer (Part Two):", color.GreenString(strconv.Itoa(totalResult)))
 }
