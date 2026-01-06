@@ -103,7 +103,7 @@ func calc(operator string, count int, num int) int {
 func main() {
 	color.Set(color.FgHiMagenta, color.Bold)
 	fmt.Println("___________________")
-	fmt.Println("05 - Advent Of Code")
+	fmt.Println("06 - Advent Of Code")
 	color.Unset()
 
 	fileName := "06-input.txt"
