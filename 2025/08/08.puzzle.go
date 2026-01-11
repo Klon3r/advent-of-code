@@ -4,6 +4,7 @@ import (
 	"advent-of-code/utils"
 	"fmt"
 	"math"
+	"sort"
 	"strconv"
 	"strings"
 
@@ -21,15 +22,35 @@ func main() {
 	partOne(fileName)
 }
 
-type PointPair struct {
-	Distance float64
-	Points string
+type junction struct {
+	result float64
+	pointOne string
+	pointTwo string	
 }
 
 func partOne(inputFile string) {
 	fileArray := utils.ReadFile(inputFile)
 
-	fmt.Println(fileArray)	
+	// Find the shortest connections (unique)
+	var resultsArray []junction
+
+	for i := 0; i < len(fileArray); i++ {
+		for j := i+1; j < len(fileArray); j++ {
+			dist := euclideanDistance(fileArray[i], fileArray[j])
+			resultsArray = append(resultsArray, junction{
+				result:   dist,
+				pointOne: fileArray[i],
+				pointTwo: fileArray[j],
+			})
+		}
+	}
+	
+	// Sort the resultsArray from shortest to longest via result
+	sort.Slice(resultsArray, func(i, j int) bool {
+    return resultsArray[i].result < resultsArray[j].result
+})
+
+	fmt.Println(resultsArray)
 }
 
 // In mathematics, the Euclidean distance between two points in a Euclidean space
