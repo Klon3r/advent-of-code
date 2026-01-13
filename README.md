@@ -10,9 +10,6 @@ This repository contains my yearly attempts at **Advent of Code**
 - Improve problem-solving skills
 - Have fun (Doesn't matter if I don't finish all the questions)
 
-<br>
-<br>
-
 # 2025
 
 ![Go Badge](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=fff&style=flat-square)
@@ -24,13 +21,3 @@ After thinking of what programming language I would pick for this year, I decide
 - Go is a widely loved language and well-suited for backend development
 - Mascot +1 (Who doesn't love the this adorable lil' gopher)
   ![](https://raw.githubusercontent.com/rfyiamcool/golang_logo/3478773144ed1d8fe4081f205933752631529e9f/svg/golang_2.svg)
-
-<!-- Styling -->
-<style>
-h1 {
-    text-shadow: 0 0 2px #00cc00, 0 0 5px #00cc00;
-    color: #00cc00;
-    text-decoration: none;
-    font-family: "Source Code Pro", monospace;
-}
-</style>
